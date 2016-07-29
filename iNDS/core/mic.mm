@@ -26,7 +26,7 @@ void Mic_DeInit(){
 }
 BOOL Mic_Init(){
     printf("Mic Init\n");
-    if (!microphone && [[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission)]) {
+    if (!microphone) {
         dispatch_async(dispatch_get_main_queue(), ^{
             microphone = [[iNDSMicrophone alloc] init];
             micEnabled = microphone.micEnabled;
